@@ -92,6 +92,7 @@ public static class Program
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(MyJwtInfo.Key))
                 };
             });
+        builder.Services.AddAuthorization();
 
 
         WebApplication app = builder.Build();

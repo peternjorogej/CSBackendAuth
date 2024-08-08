@@ -18,9 +18,9 @@ namespace Auth.Api.Controllers;
 
 public struct MyJwtInfo
 {
-    public const string Key      = "JsonWebTokenInfo.Key";
-    public const string Issuer   = "JsonWebTokenInfo.Issuer";
-    public const string Audience = "JsonWebTokenInfo.Audience";
+    public const string Key      = "Key: 5586060c-60f2-4352-8474-fb65768e2fd7";
+    public const string Issuer   = "Issuer: d69e842d-ba10-465a-a377-5cfd4ab497d7";
+    public const string Audience = "Audience: 34f64f79-9066-4160-bbb0-c03be7d7f938";
 }
 
 public struct LoginCredentials
@@ -160,15 +160,6 @@ public class AuthController : ControllerBase
 
         string token = GenerateJWT(user);
         return Ok(new { Message = "Registration successful", Token = token });
-        
-        /* IdentityResult result = await m_UserManager.CreateAsync(user, credentials.Password);
-        if (result.Succeeded)
-        {
-            string token = GenerateJWT(user);
-            return Ok(new { Message = "Registration successful", Token = token });
-        }
-
-        return BadRequest(new { Message = "Registration failed", result.Errors }); */
     }
 
     private string GenerateJWT(User user)
